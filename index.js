@@ -1,6 +1,8 @@
-const express = require('express');
-// import {fileMetadata} from 'file-metadata';
-const fs = require('fs');
+// const express = require('express');
+import express from 'express';
+import {fileMetadata} from 'file-metadata';
+// const fs = require('fs');
+import fs from 'fs';
 
 const app = express();
 
@@ -11,9 +13,8 @@ app.get('/', (req, res) => {
   
 app.listen(3000, () => {
   console.log('Server started on port 3000');
-  // fileMetadata('Bullet Impact 1.wav')
-  // .then(res => res.kMDItemDisplayNameWithExtensions = "Bullet_Impact_1.wav")
-  // .then(res => console.log(res));
+  fileMetadata('Bullet Impact 1.wav')
+  .then(res => console.log(res));
 
   // add the line bellow in the package.json file
   // "type": "module",
