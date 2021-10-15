@@ -43,8 +43,7 @@ app.listen(3000, () => {
         process.exit(1);
       };
       files.splice(0, 1);
-  
-  
+
       fs.readFile('tracks.json', 'utf8', function readFileCallback(err, data){
         if (err){
             console.log(err);
@@ -54,6 +53,7 @@ app.listen(3000, () => {
         files.forEach(audio_file => {
           fileMetadata(`./files/${audio_file}`)
           .then(res => {
+            // console.log(res)
             const file = {
               name: res.fsName,
               bitRate: res.bitsPerSample,
