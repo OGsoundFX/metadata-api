@@ -39,27 +39,39 @@ app.listen(3000, () => {
       process.exit(1);
     };
     files.splice(0, 1);
-    console.log(files)
-    files.forEach(audio_file => {
-      fileMetadata(`./files/${audio_file}`)
-      .then(res => {
-        const file = {
-          name: res.fsName,
-          bitRate: res.bitsPerSample,
-          sampleRate: res.audioSampleRate
-        };
-        fs.readFile('tracks.json', 'utf8', function readFileCallback(err, data){
-          if (err){
-              console.log(err);
-          } else {
-          const obj = JSON.parse(data); //converts your JSON file into an object
+
+
+    fs.readFile('tracks.json', 'utf8', function readFileCallback(err, data){
+      if (err){
+          console.log(err);
+      } else {
+      const obj = JSON.parse(data); //converts your JSON file into an object
+  
+      files.forEach(audio_file => {
+        fileMetadata(`./files/${audio_file}`)
+        .then(res => {
+          const file = {
+            name: res.fsName,
+            bitRate: res.bitsPerSample,
+            sampleRate: res.audioSampleRate
+          };
           obj.list.push(file); //add some data
           const json = JSON.stringify(obj); //convert it back to json
-          fs.writeFile('tracks.json', json, 'utf8', (err) => {
-            if (err) throw err;
-          }); // write the file back to folder 
-        }});
-      })
-    });
+          fs.writeFile('tracks.json', json, 'utf8', (err) => {if (err) throw err }); // write the file back to folder 
+        });
+      });
+    }});
   });
+
+  // STEP 3 (optional): verify if there is the correct amount of files in the JSON file
+  // setTimeout(()=> {
+  //   fs.readFile('tracks.json', 'utf8', function readFileCallback(err, data){
+  //     if (err){
+  //         console.log(err);
+  //     } else {
+  //       const obj = JSON.parse(data);
+  //       console.log(obj.list.length)
+  //     }
+  //   })
+  // }, 3000)
 })
