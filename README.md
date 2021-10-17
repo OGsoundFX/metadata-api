@@ -64,7 +64,7 @@ In step 3, both functions are run asynchronously like so:
     metadata();
   }, 5000)
 ````
-**SCENARIO 1: you just want to use the first STEP and change the titles of your files**
+### SCENARIO 1: you just want to use the first STEP and change the titles of your files
 
 * **PREPARATION** <br> Place all your files to which you want to change the title in the folder ```originalFiles```
 * **STEP 1** <br> **line 25** replace the regex code according to your needs
@@ -73,7 +73,7 @@ In step 3, both functions are run asynchronously like so:
 * **STEP 4** <br> **COMMENT OUT** (you don't need it)
 * **RESULT** <br> Find your files with their new titles in the folder ```files```
 
-**SCENARIO 2: you just want to use the second STEP and get the metadata of a list of files and store them into a JSON file**
+### SCENARIO 2: you just want to use the second STEP and get the metadata of a list of files and store them into a JSON file
 
 * **PREPARATION** <br> Place all your files in the ```files``` folder
 * **STEP 1** <br> **COMMENT OUT** (you don't need it)
@@ -86,7 +86,7 @@ In step 3, both functions are run asynchronously like so:
 * **STEP 4 (optional)** <br> Verify if there is the correct amount of files in the JSON file.
 * **RESULT** <br> Copy your JSON file and store it where you need it. **!!! clear the tracks.json file and set it back to ```{"list":[]}``` !!!***
 
-**SCENARIO 3: You want to both change the titles of your files and store their metadata**
+### SCENARIO 3: You want to both change the titles of your files and store their metadata
 * **PREPARATION**  <br> Place all your files in the ```files``` folder
 * **STEP 1** <br> **line 25** replace the regex code according to your needs
 * **STEP 2** <br> First you can check what **metadata** information your files contain:
@@ -100,7 +100,7 @@ In step 3, both functions are run asynchronously like so:
   * Find your files with their new titles in the folder ```files```
   * Copy your JSON file and store it where you need it. **!!! clear the tracks.json file and set it back to ```{"list":[]}``` !!!***
 
-#### Conclusion
+### Conclusion
 in all scenarii don't forget to remove the files from the ```files``` folder, for re-use of this program next time !!!
 
 ### Check out [BamSFX.com](https://www.bamsfx.com) and reach out to me for any questions :grin:
