@@ -57,7 +57,10 @@ app.listen(3000, () => {
             const file = {
               name: res.fsName,
               bitRate: res.bitsPerSample,
-              sampleRate: res.audioSampleRate
+              sampleRate: res.audioSampleRate,
+              durationSecs: res.durationSeconds,
+              fileSize: res.fsSize,
+              album: res.album
             };
             obj.list.push(file); //add some data
             const json = JSON.stringify(obj); //convert it back to json
