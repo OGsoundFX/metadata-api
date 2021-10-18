@@ -58,7 +58,7 @@ app.listen(3000, () => {
               name: res.fsName,
               bitRate: res.bitsPerSample,
               sampleRate: res.audioSampleRate,
-              durationSecs: res.durationSeconds,
+              durationSecs: Math.floor(res.durationSeconds),
               fileSize: res.fsSize,
               album: res.album
             };
