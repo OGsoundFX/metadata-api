@@ -1,14 +1,14 @@
 # What is this metadata project ??? :monocle_face:
 
 It's a small **Nodejs** app that does 2 things:
-* Replace the whitespace and "-" characters with "-" (underscores) from all filenames contained in a folder
+* Replace the whitespace and "-" characters with "_" (underscores) from all filenames contained in a folder
 * Fetch all the metadata you need from thes files and store them in a **JSON** file
 
 ### But Why ??? :woman_shrugging:
 
 Short answer: Because I needed it :nerd_face:
 <br>
-I often need to upload a large number of **sound effect audio tracks** to in order to add them to my catalogue in my **Sound Effect online shop: [BamSFX.com](https://www.bamsfx.com)**
+I often need to upload a large number of **sound effect audio tracks** in order to add them to my catalogue in my **Sound Effect online shop: [BamSFX.com](https://www.bamsfx.com)**
 <br>
 * My first **problem** was: all my track names contain whitespaces :facepalm:
 * My second **problem** was: I need seed my database with all the information from these tracks, and fortunately a lot of it is stored as **metadata**. I just need to reach it, store it in a **JSON** file that I can later use to seed my **Ruby on Rails app [BamSFX.com](https://www.bamsfx.com)**
@@ -78,10 +78,20 @@ In step 3, both functions are run asynchronously like so:
 * **PREPARATION** <br> Place all your files in the ```files``` folder
 * **STEP 1** <br> **COMMENT OUT** (you don't need it)
 * **STEP 2** <br> First you can check what **metadata** information your files contain:
-  * Comment out lines **57** to **64**
+  * Comment out lines starting at line **57** where we create a new object: <br>
+    ```
+            const file = {
+              name: res.fsName,
+              bitRate: res.bitsPerSample,
+              sampleRate: res.audioSampleRate,
+              durationSecs: res.durationSeconds,
+              fileSize: res.fsSize,
+              album: res.album
+            };
+    ```
   * Un-comment line **56** to console.log the **metadata** from your files
   * Depending on what metadata you would like to store, adapt lines **57** to **61**
-  * Comment out line **56** and un-comment lines **57** to **64** back
+  * Comment out line **56** and un-comment back the ```const file``` object starting at line **57**
 * **STEP 3** <br> **REPLACE THE CODE WITH:** ```metadata()``` to run only the **metadata()** function!
 * **STEP 4 (optional)** <br> Verify if there is the correct amount of files in the JSON file.
 * **RESULT** <br> Copy your JSON file and store it where you need it. **!!! clear the tracks.json file and set it back to ```{"list":[]}``` !!!***
@@ -90,10 +100,20 @@ In step 3, both functions are run asynchronously like so:
 * **PREPARATION**  <br> Place all your files in the ```files``` folder
 * **STEP 1** <br> **line 25** replace the regex code according to your needs
 * **STEP 2** <br> First you can check what **metadata** information your files contain:
-  * Comment out lines **57** to **64**
+    * Comment out lines starting at line **57** where we create a new object: <br>
+    ```
+            const file = {
+              name: res.fsName,
+              bitRate: res.bitsPerSample,
+              sampleRate: res.audioSampleRate,
+              durationSecs: res.durationSeconds,
+              fileSize: res.fsSize,
+              album: res.album
+            };
+    ```
   * Un-comment line **56** to console.log the **metadata** from your files
   * Depending on what metadata you would like to store, adapt lines **57** to **61**
-  * Comment out line **56** and un-comment lines **57** to **64** back
+  * Comment out line **56** and un-comment back the ```const file``` object starting at line **57**
 * **STEP 3** <br> Leave like this
 * **STEP 4 (optional)** <br> Verify if there is the correct amount of files in the JSON file.
 * **RESULT**
