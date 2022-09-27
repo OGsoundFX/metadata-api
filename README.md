@@ -11,7 +11,7 @@ Short answer: Because I needed it :nerd_face:
 I often need to upload a large number of **sound effect audio tracks** in order to add them to my catalogue in my **Sound Effect online shop: [BamSFX.com](https://www.bamsfx.com)**
 <br>
 * My first **problem** was: all my track names contain whitespaces :facepalm:
-* My second **problem** was: I need seed my database with all the information from these tracks, and fortunately a lot of it is stored as **metadata**. I just need to reach it, store it in a **JSON** file that I can later use to seed my **Ruby on Rails app [BamSFX.com](https://www.bamsfx.com)**
+* My second **problem** was: I need to seed my database with all the information from these tracks, and fortunately a lot of it is stored as **metadata**. I just need to reach it, store it in a **JSON** file that I can later use to seed my **Ruby on Rails app [BamSFX.com](https://www.bamsfx.com)**
 
 ### Then how does it work ??? :raised_eyebrow:
 
@@ -25,13 +25,13 @@ The files and folders you should have a look at are:
 * Folder ```originalFiles```: <br> This is where you will place all your files that you want to modify the titles.
 * Folder ```files```: <br> This is the destination folder where are the newly titled files will end up. <br> This is also the folder where the app will look for the tracks to extract their metadata and store the information in the ```JSON``` file (see bellow).
 * File ```tracks.json```: this is the destination file where the metadata from your files will be stored.
-* File ``ìndex.js```: this is where all the code will be happening
+* File ```index.js```: this is where all the code will be happening
 
 #### The ``` index.js``` file, how does it work:
 
 If you have added some files in the ```originalFiles```folder, you can run the program: <br> ```node index.js``` <br>
-This will:
-1- Remove all the whitespace and '-' characters from the files titles and replace them with '_'.
+This will:<br>
+1- Remove all the whitespace and '-' characters from the files titles and replace them with '_'.<br>
 2- Store and fetch and bunch of metadata (specifically handpicked by myself in this case) and export them into the ```tracks.json``` file.
 
 #### Adapt the program to your needs, and run it:
