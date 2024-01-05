@@ -1,4 +1,4 @@
-# What is this metadata project ??? :monocle_face:
+# What is this metadata API ??? :monocle_face:
 
 It's a small **Nodejs** app that does 2 things:
 * Replace the whitespace and "-" characters with "_" (underscores) from all filenames contained in a folder
